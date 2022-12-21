@@ -1,0 +1,60 @@
+#include <iostream>
+#include <memory>
+#include <map>
+#include <fstream>
+#include <list>
+#include <functional>
+#include <string>
+
+#include "Bus.h"
+#include "BusManager.h"
+#include "StationCode.h"
+#include "Ticket.h"
+#include "Ticket_manager.h"
+#include "eventHandler.h"
+
+void EventNotificationHandler::GetNotification(int flag)
+{
+    std::ofstream log;
+    int flag1 =0;
+    int static  count = 0;
+    std::string str = "\nticket booked";
+    //std::cout<<"ticket booked"<<std::endl; 
+    auto func1 = std::bind(EventNotificationHandler::GetNotification,std::placeholders::_1);
+    // if(flag == 0)
+    // {
+    std::ofstream fout("reservationNotification.txt",std::ios::app);
+    fout << str;
+
+   // }    
+   //log.seekg( 0, ios::app ); 
+  //  log.open("reservationNotification.txt", std::fstream::app);
+      //write data to the file student
+    // if(flag == flag1 )
+    // {
+    //     fout<<"new";
+    // }
+    fout.close();
+   // }
+    // std::ifstream fin("reservationNotification.txt");   
+    // fin>>str;   //read data from the file student   
+    //fin.close();
+    count ++;
+    std::cout<<"count"<<count<<std::endl;
+    //std::cout<<str;
+    // auto func1 = std::bind(TicketManager::BookTicket , this ,std::placeholders::_1);
+    // func1(JourneyDetails);
+    // std::cout<<"getting booked"<<std::endl;
+}
+
+void EventNotificationHandler::cancelNotification()
+{
+    std::string str = "\nticket canceled";
+    auto func1 = std::bind(EventNotificationHandler::cancelNotification);
+    std::ofstream fout("reservationNotification.txt",std::ios::app);
+    fout << str;
+}
+
+
+
+
