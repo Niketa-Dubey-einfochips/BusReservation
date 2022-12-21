@@ -70,3 +70,9 @@ PNR : TicketPNR_BLDBEFSARC	Status : CONFIRMED	Name : t
 PNR : TicketPNR_BYNECDYGGX	Status : WAITING	Name : y	
 PNR : TicketPNR_JMOWFRXSJY	Status : CANCELED	Name : r	
 BusNo : BusID_1	Seats : 2	Capacity : 2	
+BusNo : BusID_1	Seats : 4	Capacity : 4	
+BusNo : BusID_2	Seats : 4	Capacity : 4	
+BusNo : BusID_1	Seats : 4	Capacity : 4	
+BusNo : BusID_1	Seats : 3	Capacity : 3	
+BusNo : BusID_1	Seats : 4	Capacity : 4	
+BusNo : BusID_2	Seats : 5	Capacity : 5	

@@ -19,6 +19,7 @@ class BusManager:public BusManagerIF , public  std::enable_shared_from_this<BusM
         void AddBus(BusIF::BusDetails);
         std::list<BusIF::Ptr> search(stationcode::stCode,stationcode::stCode);
         std::list<BusIF::Ptr> PrintBusList();
+        std::string StringPrintBusList();
         bool CancelTicket(std::string);
         virtual void RegisterForAddBus( std::function<void(BusIF::Ptr,BusIF::BusDetails& )> ) override;
         virtual ~BusManager(){};        

@@ -30,6 +30,7 @@ int main()
     int i;
     int pass_no;
     int bus;
+    std::string print = " ";
     std::string m_name;   
     std::list<stationcode::stCode> stationlist2;
     BusManagerIF::Ptr B1= BusManager::CreateBusManager();
@@ -100,17 +101,21 @@ int main()
                         break;
                     case 2:
                         std::cout<<"---------Delete Bus-----"<<std::endl;
-                        
+                       // B1->StringPrintBusList();
                         break;
                     case 3:
                         std::cout<<"---------preparaed chart------"<<std::endl;
                         i=0;
+                        
                         buslist=B1->PrintBusList();
                         for(auto it=buslist.begin();it!=buslist.end();it++)
                         {
                             std::cout<<i<<"\t"<<(*it)->PrintBusDetails()<<std::endl;
                             i++;
+                            print = print + "\n" + (*it)->PrintBusDetails();
                         }
+                        std::cout<<print<<std::endl;
+
                         std::cout<<"Select the bus"<<std::endl;
                         std::cin>>bus;
                         it = buslist.begin();

@@ -16,6 +16,7 @@ public:
     virtual void AddBus(BusIF::BusDetails)=0;
     virtual std::list<BusIF::Ptr> search(stationcode::stCode,stationcode::stCode)=0;
     virtual std::list<BusIF::Ptr> PrintBusList()=0;
+    virtual std::string StringPrintBusList()=0;
     virtual bool CancelTicket(std::string)=0;
     virtual void  RegisterForAddBus( std::function<void(BusIF::Ptr,BusIF::BusDetails& )> ) =0 ;   
 };

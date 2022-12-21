@@ -51,6 +51,15 @@ std::list<BusIF::Ptr> BusManager::search(stationcode::stCode src,stationcode::st
     }
     return buslist;
 }
+std::string BusManager::StringPrintBusList()
+{
+    std::string print = " ";
+    for(auto it=BusList.begin();it!=BusList.end();it++)
+    {
+        print = print + "\n" + (it->second)->PrintBusDetails();
+    }
+    return print;
+}
 std::list<BusIF::Ptr> BusManager::PrintBusList()
 {
     std::list<BusIF::Ptr> Buslist;
